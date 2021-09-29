@@ -1,0 +1,58 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Register</mat-card-title>
+        <mat-card-subtitle>Aren't a member yet? Join Us!</mat-card-subtitle>
+
+        <form [formGroup]="form">
+            <div class="form"><!--open form-->
+                <div class="form-row"><!--open row-->
+                    <mat-form-field class="form-item" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput placeholder="" formControlName="fname" required>
+                    </mat-form-field>
+        
+                    <mat-form-field class="form-item" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput placeholder="" formControlName="lname" required>
+                    </mat-form-field>
+                </div> <!--closing row-->
+
+                <mat-form-field class="form-item" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="" formControlName="email" required>
+                </mat-form-field>
+
+                <div class="form-row"> <!--open row-->
+                    <mat-form-field class="form-item" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input [type]="hide ? 'password' : 'text'" matInput formControlName="pw">
+                    </mat-form-field>
+
+                    <mat-form-field class="form-item" appearance="fill">
+                        <mat-label>Confirm Password</mat-label>
+                        <input [type]="hide ? 'password' : 'text'" matInput formControlName="confirmPw">
+                    </mat-form-field>
+                </div><!--closing row-->
+                    <section class="checkbox-container">
+                        <mat-label>Wich plataform do you like to play?</mat-label>
+                        <ul>
+                            <li><mat-checkbox>PC</mat-checkbox></li>
+                            <li><mat-checkbox>Playstation</mat-checkbox></li>
+                            <li><mat-checkbox>XBOX</mat-checkbox></li>
+                        </ul>
+                    </section>
+
+                    <section class="agreement-terms">
+                        <mat-checkbox>I agree with all terms.</mat-checkbox>
+                    </section>
+
+
+                </div> <!--close form-->
+        </form>
+        <div class="card-footer">
+            <button register-button mat-button color="primary" (click)="submitData()">Register</button>
+        </div>
+      </mat-card>
+</div>
+
+
