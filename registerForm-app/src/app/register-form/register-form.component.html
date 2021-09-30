@@ -3,49 +3,78 @@
         <mat-card-title>Register</mat-card-title>
         <mat-card-subtitle>Aren't a member yet? Join Us!</mat-card-subtitle>
 
+        
+
         <form [formGroup]="form">
             <div class="form"><!--open form-->
-                <div class="form-row"><!--open row-->
-                    <mat-form-field class="form-item" appearance="fill">
-                        <mat-label>First Name</mat-label>
-                        <input type="text" matInput placeholder="" formControlName="fname" required>
-                    </mat-form-field>
+
+                <mat-tab-group mat-align-tabs="center">
+                    <mat-tab label="You">
+
+                        <div class="form-row"><!--open row-->
+
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>First Name</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="fname" required>
+                            </mat-form-field>
+                
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Last Name</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="lname" required>
+                            </mat-form-field>
+
+                        </div> <!--closing row-->
+
+                        <div class="form-column"> <!--open column-->
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Identity Number</mat-label>
+                                <input type="number" matInput placeholder="" formControlName="identityNumber" required>
+                            </mat-form-field>
+    
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="" formControlName="email" required>
+                            </mat-form-field>
+                        </div> <!--closing column-->
+
+                        <div class="form-row"> <!--open row-->
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input [type]="hide ? 'password' : 'text'" matInput formControlName="pw">
+                            </mat-form-field>
         
-                    <mat-form-field class="form-item" appearance="fill">
-                        <mat-label>Last Name</mat-label>
-                        <input type="text" matInput placeholder="" formControlName="lname" required>
-                    </mat-form-field>
-                </div> <!--closing row-->
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Confirm Password</mat-label>
+                                <input [type]="hide ? 'password' : 'text'" matInput formControlName="confirmPw">
+                            </mat-form-field>
+                        </div><!--closing row-->
+                            <section class="checkbox-container">
+                                <mat-label>Wich plataform do you like to play?</mat-label>
+                                <ul>
+                                    <li><mat-checkbox>PC</mat-checkbox></li>
+                                    <li><mat-checkbox>Playstation</mat-checkbox></li>
+                                    <li><mat-checkbox>XBOX</mat-checkbox></li>
+                                </ul>
+                            </section>
+                    </mat-tab>
+                    <mat-tab label="Address">
+                        <mat-form-field class="form-item" appearance="fill">
+                            <mat-label>Zip Code</mat-label>
+                            <input type="text" matInput placeholder="" formControlName="zipCode" required>
+                        </mat-form-field>
 
-                <mat-form-field class="form-item" appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="" formControlName="email" required>
-                </mat-form-field>
-
-                <div class="form-row"> <!--open row-->
-                    <mat-form-field class="form-item" appearance="fill">
-                        <mat-label>Password</mat-label>
-                        <input [type]="hide ? 'password' : 'text'" matInput formControlName="pw">
-                    </mat-form-field>
-
-                    <mat-form-field class="form-item" appearance="fill">
-                        <mat-label>Confirm Password</mat-label>
-                        <input [type]="hide ? 'password' : 'text'" matInput formControlName="confirmPw">
-                    </mat-form-field>
-                </div><!--closing row-->
-                    <section class="checkbox-container">
-                        <mat-label>Wich plataform do you like to play?</mat-label>
-                        <ul>
-                            <li><mat-checkbox>PC</mat-checkbox></li>
-                            <li><mat-checkbox>Playstation</mat-checkbox></li>
-                            <li><mat-checkbox>XBOX</mat-checkbox></li>
-                        </ul>
-                    </section>
-
-                    <section class="agreement-terms">
-                        <mat-checkbox>I agree with all terms.</mat-checkbox>
-                    </section>
-
+                        <mat-form-field class="form-item" appearance="fill">
+                            <mat-label>Home Number</mat-label>
+                            <input type="text" matInput placeholder="" formControlName="hNumber" required>
+                        </mat-form-field>
+                        
+                    </mat-tab>
+                    <mat-tab label="Terms">
+                        <section class="agreement-terms">
+                            <mat-checkbox>I agree with all terms.</mat-checkbox>
+                        </section>
+                    </mat-tab>
+                  </mat-tab-group>
 
                 </div> <!--close form-->
         </form>

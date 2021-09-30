@@ -21,9 +21,12 @@ export class RegisterFormComponent implements OnInit {
       fname: ['', Validators.required],
       lname: ['', Validators.required],
       email: ['', Validators.required,Validators.email],
+      identityNumber: ['', Validators.required],
       pw: ['', Validators.required],
       confirmPw: ['', Validators.required],
-      plataform: ['',Validators.required]
+      plataform: ['',Validators.required],
+      zipCode: ['',Validators.required],
+      hNumber: ['',Validators.required]
     })
   }
 
