@@ -1,18 +1,13 @@
 <div class="container">
-    <mat-card>
+    <mat-card class="card">
         <mat-card-title>Register</mat-card-title>
         <mat-card-subtitle>Aren't a member yet? Join Us!</mat-card-subtitle>
-
-        
-
         <form [formGroup]="form">
-            <div class="form"><!--open form-->
 
-                <mat-tab-group mat-align-tabs="center">
+            <div class="form">
+                <mat-tab-group mat-align-tabs="center" animationDuration="800ms">
                     <mat-tab label="You">
-
-                        <div class="form-row"><!--open row-->
-
+                        <div class="form-row">
                             <mat-form-field class="form-item" appearance="fill">
                                 <mat-label>First Name</mat-label>
                                 <input type="text" matInput placeholder="" formControlName="fname" required>
@@ -22,10 +17,9 @@
                                 <mat-label>Last Name</mat-label>
                                 <input type="text" matInput placeholder="" formControlName="lname" required>
                             </mat-form-field>
+                        </div> 
 
-                        </div> <!--closing row-->
-
-                        <div class="form-column"> <!--open column-->
+                        <div class="form-column">
                             <mat-form-field class="form-item" appearance="fill">
                                 <mat-label>Identity Number</mat-label>
                                 <input type="number" matInput placeholder="" formControlName="identityNumber" required>
@@ -35,9 +29,9 @@
                                 <mat-label>Email</mat-label>
                                 <input type="email" matInput placeholder="" formControlName="email" required>
                             </mat-form-field>
-                        </div> <!--closing column-->
+                        </div> 
 
-                        <div class="form-row"> <!--open row-->
+                        <div class="form-row">
                             <mat-form-field class="form-item" appearance="fill">
                                 <mat-label>Password</mat-label>
                                 <input [type]="hide ? 'password' : 'text'" matInput formControlName="pw">
@@ -47,7 +41,7 @@
                                 <mat-label>Confirm Password</mat-label>
                                 <input [type]="hide ? 'password' : 'text'" matInput formControlName="confirmPw">
                             </mat-form-field>
-                        </div><!--closing row-->
+                        </div>
                             <section class="checkbox-container">
                                 <mat-label>Wich plataform do you like to play?</mat-label>
                                 <ul>
@@ -58,16 +52,38 @@
                             </section>
                     </mat-tab>
                     <mat-tab label="Address">
-                        <mat-form-field class="form-item" appearance="fill">
-                            <mat-label>Zip Code</mat-label>
-                            <input type="text" matInput placeholder="" formControlName="zipCode" required>
-                        </mat-form-field>
+                        <div class="form-row">
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Zip Code</mat-label>
+                                <input type="text" matInput placeholder="" (focusout)="autoFill()" formControlName="zipCode" required>
+                            </mat-form-field>
+    
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Home Number</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="hNumber" required>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-column">
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>Street</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="street" required>
+                            </mat-form-field>
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>District</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="district" required>
+                            </mat-form-field>
+                        </div>
 
-                        <mat-form-field class="form-item" appearance="fill">
-                            <mat-label>Home Number</mat-label>
-                            <input type="text" matInput placeholder="" formControlName="hNumber" required>
-                        </mat-form-field>
-                        
+                        <div class="form-row">
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>City</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="city" required>
+                            </mat-form-field>
+                            <mat-form-field class="form-item" appearance="fill">
+                                <mat-label>UF</mat-label>
+                                <input type="text" matInput placeholder="" formControlName="uf" required>
+                            </mat-form-field>
+                        </div>
                     </mat-tab>
                     <mat-tab label="Terms">
                         <section class="agreement-terms">
@@ -75,9 +91,8 @@
                         </section>
                     </mat-tab>
                   </mat-tab-group>
-
-                </div> <!--close form-->
-        </form>
+                </div>
+        </form> 
         <div class="card-footer">
             <button register-button mat-button color="primary" (click)="submitData()">Register</button>
         </div>
