@@ -17,6 +17,9 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 
@@ -44,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     HttpClientModule,
     MatToolbarModule,
+    MatProgressBarModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

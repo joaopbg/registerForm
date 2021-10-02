@@ -1,0 +1,23 @@
+.login-section{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.mat-card{
+    width: 25rem;
+    margin: 1rem;
+}
+.mat-card-actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
