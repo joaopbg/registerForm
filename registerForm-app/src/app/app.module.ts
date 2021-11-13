@@ -19,6 +19,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -30,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     routingComponents
-    
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatToolbarModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,7 +24,6 @@ export class RegisterFormComponent implements OnInit {
       fname: ['', Validators.required],
       lname: ['', Validators.required],
       email: ['', Validators.required,Validators.email],
-      identityNumber: ['', Validators.required],
       pw: ['', Validators.required],
       confirmPw: ['', Validators.required],
       plataform: ['',Validators.required],
@@ -40,7 +39,7 @@ export class RegisterFormComponent implements OnInit {
   public submitData(){
     alert('go to sleep sir')
   }
-  
+
   public autoFill(){
     this.cepService.getCep(this.form.controls['zipCode'].value).subscribe(cep => {
       let aux = cep

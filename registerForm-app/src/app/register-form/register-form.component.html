@@ -1,101 +1,47 @@
 <div class="container">
+
     <mat-card class="card">
-        <mat-card-title>Register</mat-card-title>
-        <mat-card-subtitle>Aren't a member yet? Join Us!</mat-card-subtitle>
-        <form [formGroup]="form">
+        <mat-card-title> <h1> Register </h1> </mat-card-title>
+        <mat-card-subtitle> <h3> Aren't a member yet? Join Us! </h3> </mat-card-subtitle>
 
-            <div class="form">
-                <mat-tab-group mat-align-tabs="center" animationDuration="800ms">
-                    <mat-tab label="You">
-                        <div class="form-row">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>First Name</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="fname" required>
-                            </mat-form-field>
-                
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Last Name</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="lname" required>
-                            </mat-form-field>
-                        </div> 
+        <mat-stepper linear #stepper>
+          <mat-step [stepControl]="form">
 
-                        <div class="form-column">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Identity Number</mat-label>
-                                <input type="number" matInput placeholder="" formControlName="identityNumber" required>
-                            </mat-form-field>
-    
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Email</mat-label>
-                                <input type="email" matInput placeholder="" formControlName="email" required>
-                            </mat-form-field>
-                        </div> 
+            <form [formGroup]="form">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="fname" placeholder="Last name, First name" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="form">
+            <form [formGroup]="form">
+              <ng-template matStepLabel>Fill out your address</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="email" placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
 
-                        <div class="form-row">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Password</mat-label>
-                                <input [type]="hide ? 'password' : 'text'" matInput formControlName="pw">
-                            </mat-form-field>
-        
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Confirm Password</mat-label>
-                                <input [type]="hide ? 'password' : 'text'" matInput formControlName="confirmPw">
-                            </mat-form-field>
-                        </div>
-                            <section class="checkbox-container">
-                                <mat-label>Wich plataform do you like to play?</mat-label>
-                                <ul>
-                                    <li><mat-checkbox>PC</mat-checkbox></li>
-                                    <li><mat-checkbox>Playstation</mat-checkbox></li>
-                                    <li><mat-checkbox>XBOX</mat-checkbox></li>
-                                </ul>
-                            </section>
-                    </mat-tab>
-                    <mat-tab label="Address">
-                        <div class="form-row">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Zip Code</mat-label>
-                                <input type="text" matInput placeholder="" (focusout)="autoFill()" formControlName="zipCode" required>
-                            </mat-form-field>
-    
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Home Number</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="hNumber" required>
-                            </mat-form-field>
-                        </div>
-                        <div class="form-column">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>Street</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="street" required>
-                            </mat-form-field>
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>District</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="district" required>
-                            </mat-form-field>
-                        </div>
-
-                        <div class="form-row">
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>City</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="city" required>
-                            </mat-form-field>
-                            <mat-form-field class="form-item" appearance="fill">
-                                <mat-label>UF</mat-label>
-                                <input type="text" matInput placeholder="" formControlName="uf" required>
-                            </mat-form-field>
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="Terms">
-                        <section class="agreement-terms">
-                            <mat-checkbox>I agree with all terms.</mat-checkbox>
-                        </section>
-                    </mat-tab>
-                  </mat-tab-group>
-                </div>
-        </form> 
-        <div class="card-footer">
-            <button register-button mat-button color="primary" (click)="submitData()">Register</button>
-        </div>
       </mat-card>
 </div>
 
